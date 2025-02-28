@@ -1,0 +1,30 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <div class="features">
+        <h1>Страница добавления учащихся</h1>
+
+        <form method="post">
+            {% csrf_token %}
+            {{ form.last_name }}
+            {{ form.first_name }}
+            {{ form.father_name }}
+            {{ form.birth_date }}
+            {{ form.gender }}
+            {{ form.phone_number }}
+
+            <input type="text" placeholder="Фамилия" class="form-control"><br>
+            <input type="text" placeholder="Имя" class="form-control"><br>
+            <input type="text" placeholder="Отчество" class="form-control"><br>
+            <input type="date" placeholder="Дата рождения" class="form-control"><br>
+            <input type="text" placeholder="Пол" list="options" class="form-control"><br>
+                <datalist id="options">
+                  <option value="Мужской">
+                  <option value="Женский">
+                </datalist>
+            <input type="tel" placeholder="Телефон" class="form-control"><br>
+            <button class="btn btn-success" type="submit"> Добавить </button>
+
+        </form>
+    </div>
+{% endblock %}
