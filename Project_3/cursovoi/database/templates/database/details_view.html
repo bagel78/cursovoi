@@ -1,0 +1,16 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <div class="features">
+        <h1>Личная информация</h1>
+            <h3>{{ student.last_name }}</h3>
+            <p>{{ student.first_name }}</p>
+            <p>{{ student.father_name }}</p>
+            <p>{{ student.birth_date }}</p>
+            <p>{{ student.gender }}</p>
+            <p>{{ student.phone_number }}</p>
+
+            <a href="{% url 'students-update' student.id %}" class="btn btn-outline-success">Редактировать</a>
+            <a href="{% url 'students-delete' student.id %}" class="btn btn-outline-danger">Удалить</a>
+
+{% endblock %}
