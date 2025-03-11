@@ -1,0 +1,17 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <div class="features">
+        <h1>Личная информация</h1>
+            <h3>{{ teacher.last_name }}</h3>
+            <p>{{ teacher.first_name }}</p>
+            <p>{{ teacher.father_name }}</p>
+            <p>{{ teacher.birth_date }}</p>
+            <p>{{ teacher.gender }}</p>
+            <p>{{ teacher.phone_number }}</p>
+            <p>{{ teacher.class_name }}</p>
+
+            <a href="{% url 'teacher-update' teacher.id %}" class="btn btn-outline-success">Редактировать</a>
+            <a href="{% url 'teacher-delete' teacher.id %}" class="btn btn-outline-danger">Удалить</a>
+
+{% endblock %}

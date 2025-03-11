@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block content %}
+    <div class="features">
+        <h1>Страница БД</h1><br>
+
+        <h1>Список преподавателей</h1>
+        {% if teacher %}
+            {% for el in teacher %}
+                <div class="alert alert-warning">
+                    <a href="{% url 'teachers-detail' el.id %}"><h3>{{ el.last_name }}</h3></a>
+                    <p>{{ el.first_name }}</p>
+                </div>
+            {% endfor %}
+        {% else %}
+            <p>У вас нет записей.</p>
+        {% endif %}
+    </div>
+{% endblock %}
